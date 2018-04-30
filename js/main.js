@@ -52,6 +52,10 @@ if (localStorage.getItem("check3") == "true") {
 	$("#check3").prop("checked", true);
 	$("#check3").next(inputText).css("text-decoration", "line-through");
 }
+if (localStorage.getItem("check4") == "true") {
+	$("#check4").prop("checked", true);
+	$("#check4").next(inputText).css("text-decoration", "line-through");
+}
 
 
 $(".input-text").change(function() {
@@ -66,6 +70,9 @@ if (localStorage.getItem("text2") != null) {
 }
 if (localStorage.getItem("text3") != null) {
 	$("#text3").val(localStorage.getItem("text3"));
+}
+if (localStorage.getItem("text4") != null) {
+	$("#text4").val(localStorage.getItem("text4"));
 }
 
 $("#delete").click(function() {
