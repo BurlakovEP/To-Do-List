@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'lazyc';
+  src: url(../fonts/lazyc.ttf);
+ }
+
+@font-face {
+  font-family: 'TheCapt';
+  src: url(../fonts/TheCapt.otf);
+ }
+
+#wrapper {
+	background-color: #f2f2f2;
+	height: 650px;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: #ededed;
+	border: 1px solid #b3b3b3;
+	border-radius: 1px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px 10px;
+/*	border-bottom: 1px solid grey;*/
+}
+
+header .title {
+	text-transform: uppercase;
+	font-family: TheCapt;
+	font-weight: 700;
+	font-size: 60px;
+	color: #3499CAFF;
+	text-shadow: 1px 1px 1px #0C0C0CFF;
+}
+
+header .date {
+	text-transform: uppercase;
+	font-family: TheCapt;
+	font-size: 25px;
+	color: #3499CAFF;
+	text-shadow: 1px 1px 1px #0C0C0CFF;
+}
+
+main .row {
+	height: 40px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main .row input[type="text"] {
+	height: 70%;
+	width: 85%;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid grey;
+	background-color: inherit;
+	font-size: 30px;
+	font-weight: 600;
+	font-family: lazyc;
+	padding-left: 10px;
+}
+
+main .row input[type="text"]:focus {
+	outline: none;
+}
+
+main .row input[type="checkbox"] {
+	height: 20px;
+	width: 20px;
+	margin: 5px 15px 5px 10px;
+	
+}
+
+footer {
+	display: flex;
+	justify-content: flex-end;
+	padding: 15px;
+}
+
+footer button {
+	background-color: #ff001e;
+	font-family: 'TheCapt';
+	font-weight: 700;
+	color: #dddddd;
+	font-size: 20px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	border: 1px solid #fa3e3e;
+	border-style: solid;
+	border-bottom: 4px solid #932525;
+	text-shadow: 1px 1px 2px #000;
+	box-shadow: 2px 2px 2px #939393;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+footer button:focus {
+	outline: none;
+}
+
+footer button:active {
+	border-bottom: 1px solid #932525;
+	margin-top: 3px;
+	box-shadow: 1px 1px 1px #939393;
+}
