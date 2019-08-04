@@ -1,7 +1,7 @@
-getRows();
-getDate();
+createRows();
+createDate();
 
-function getRows() {
+function createRows() {
 	for(var i = 1; i < 14; i++) {
 		var inputCheck = $("<input>").attr({'type' : "checkbox", "class" : "input-check", 'id' : "check" + i,});
 		var inputText = $("<input>").attr({'type' : "text", "class" : "input-text", 'id' : "text" + i,});
@@ -10,7 +10,7 @@ function getRows() {
 	}
 }
 
-function getDate() {
+function createDate() {
 	var date 	= new Date();
 	var year 	= date.getFullYear();			
 	var month 	= (date.getMonth() + 1);
@@ -35,50 +35,29 @@ $(".input-check").click(function() {
 		localStorage.setItem($(this).prop("id"), "true");
 	}
 	else {
-		localStorage.setItem($(this).prop("id"), "false");
 		$(this).next(inputText).css("text-decoration", "none");
+		localStorage.setItem($(this).prop("id"), "false");		
 	}
 });
 
-if (localStorage.getItem("check1") == "true") {
-	$("#check1").prop("checked", true);
-	$("#check1").next(inputText).css("text-decoration", "line-through");
-}
-if (localStorage.getItem("check2") == "true") {
-	$("#check2").prop("checked", true);
-	$("#check2").next(inputText).css("text-decoration", "line-through");
-}
-if (localStorage.getItem("check3") == "true") {
-	$("#check3").prop("checked", true);
-	$("#check3").next(inputText).css("text-decoration", "line-through");
-}
-if (localStorage.getItem("check4") == "true") {
-	$("#check4").prop("checked", true);
-	$("#check4").next(inputText).css("text-decoration", "line-through");
-}
-
-
 $(".input-text").change(function() {
-  	localStorage.setItem($(this).prop("id"), $(this).val());
+	localStorage.setItem($(this).prop("id"), $(this).val());
 });
 
-if (localStorage.getItem("text1") != null) {
-	$("#text1").val(localStorage.getItem("text1"));
-}
-if (localStorage.getItem("text2") != null) {
-	$("#text2").val(localStorage.getItem("text2"));
-}
-if (localStorage.getItem("text3") != null) {
-	$("#text3").val(localStorage.getItem("text3"));
-}
-if (localStorage.getItem("text4") != null) {
-	$("#text4").val(localStorage.getItem("text4"));
+for(var i = 1; i < inputText.length + 1; i++) {
+	if (localStorage.getItem("check" + i + "") == "true") {
+		$("#check" + i + "").prop("checked", true);
+		$("#check" + i + "").next(inputText).css("text-decoration", "line-through");
+	}
+
+	if (localStorage.getItem("text" + i + "") != null) {
+		$("#text" + i + "").val(localStorage.getItem("text" + i + ""));
+	}
 }
 
 $("#delete").click(function() {
 	$(".input-check").prop("checked", false);
 	$(".input-text").val("");
+	$(".input-text").css("text-decoration", "none");
 	localStorage.clear();
-});       
-
-
+});
